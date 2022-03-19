@@ -10,10 +10,9 @@ function publish {
 
   go mod tidy \
   && go test ./tests/... \
-  && git commit -m "version/main: ${version}" \
   && git tag ${version} \
   && git push origin ${version} \
-  && GOPROXY=proxy.golang.org go list -m github.com/bnert@${version}
+  && GOPROXY=proxy.golang.org go list -m github.com/bnert/mfr@${version}
 }
 
 if [[ -z $1 || "$1" == "help" ]]; then

@@ -42,7 +42,7 @@ func main() {
   })
 
   sum := mfr.Reduce[int, int](d3, 0, func(ctx mfr.Ctx[int], acc int) int {
-    return ctx.Current + ctx.Item
+    return acc + ctx.Item
   })
 
   // Prints:
