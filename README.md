@@ -37,7 +37,7 @@ func main() {
     return ctx.Item.Value * 3
   })
 
-  d3 := mfr.Filter[Data](d2, func(ctx mfr.Ctx[Data]) bool) []Data {
+  d3 := mfr.Filter[int](d2, func(ctx mfr.Ctx[int]) bool) []int {
     return ctx.Item % 2 == 0
   })
 
